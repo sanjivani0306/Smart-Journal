@@ -1,0 +1,15 @@
+SMART JOURNAL AUTHENTICATION FIX
+
+The backend no longer uses Passlib for bcrypt. It uses the installed bcrypt package directly.
+Passwords are limited to 72 characters by the request schema and checked in bytes before hashing.
+
+If you recreate the virtual environment:
+  venv\Scripts\activate
+  pip install -r requirements.txt
+
+Then start:
+  uvicorn app.main:app --reload
+
+CORS is configured for:
+  http://localhost:5173
+  http://127.0.0.1:5173
